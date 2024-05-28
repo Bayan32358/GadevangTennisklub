@@ -1,0 +1,27 @@
+﻿@model IEnumerable<GadevangTennisklub.Models.Member>
+
+<h2>Member List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.Name</td>
+                <td>@member.Email</td>
+                <td>@member.Phone</td>
+                <td>@member.MembershipType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Member" asp-action="Create" class="btn btn-primary">Add New Member</a>
